@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    
+
+    <title>Innovacion Evaluacion Tecnica - Alumnos</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap theme -->
+    <link href="lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <!-- Angular CSP-->
+    <link href="lib/angular/css/angular-csp.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="lib/html5shiv/html5shiv.min.js"></script>
+      <script src="lib/respond/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- require -->
+    <script src="lib/require/require.js"></script>
+
+
+    <!-- angularjs -->
+    <link href="lib/angular/css/angular-csp.css" rel="stylesheet" />
+    <script src="lib/angular/js/angular.js"></script>
+    <script src="lib/angular/js/angular-animate.js"></script>
+    <script src="lib/angular/js/angular-resource.js"></script>
+    <script src="lib/angular/js/angular-ui-router.js"></script>
+    <script src="lib/angular/js/angular-ui-bootstrap-tpls.js"></script>
+
+    <script src="js/main.js"></script>
+    
+  </head>
+
+  <body ng-controller="AlumnosController">
+    
+    
+    <h3>
+         CRUD: Alumno
+      </h3>
+      <a href="index.html">Profesores</a>
+      
+      <form ng-submit="crearAlumno()">
+      <div class="container">
+         <table class="table" border="0">
+            <tr>
+               <td>Alumno Id</td>
+               <td>{{alumnoForm.alumnoId}}</td>
+            </tr>
+            <tr>
+               <td>Alumno</td>
+               <td><input type="text" ng-model="alumnoForm.alumnoNombre" /></td>
+            </tr>
+            <tr>
+               <td>Apellido</td>
+               <td><input type="text" ng-model="alumnoForm.alumnoApellido" /></td>
+            </tr>
+            <tr>
+               <td>Carnet</td>
+               <td><input type="text" ng-model="alumnoForm.alumnoCarnet"  /></td>
+            </tr>
+            <tr>
+               <td>Grado</td>
+               <td><input type="text" ng-model="alumnoForm.alumnoGrado"  /></td>
+            </tr>
+            <tr>
+               <td>Padre</td>
+               <td><input type="text" ng-model="alumnoForm.alumnoPadre"  /></td>
+            </tr>
+            <tr>
+               <td>Madre</td>
+               <td><input type="text" ng-model="alumnoForm.alumnoMadre"  /></td>
+            </tr>
+            <tr>
+               <td>Edad</td>
+               <td><input type="text" ng-model="alumnoForm.alumnoEdad"  /></td>
+            </tr>
+            <tr>
+               <td>Nota Final</td>
+               <td><input type="text" ng-model="alumnoForm.alumnoNota"  /></td>
+            </tr>
+            <tr>
+               <td colspan="2">
+                  <input type="submit" value="Crear" class="btn btn-primary" />
+               </td>
+               <td>
+                <a ng-click="createAlumno()" class="btn btn-primary">Limpiar</a>
+               </td>
+            </tr>
+         </table>
+         </div>
+      </form>
+      <br/>
+      
+      <div class="container">
+      <table class="table" border="1">
+         <tr>
+            <th>Alumno Id</th>
+            <th>Alumno Nombre</th>
+            <th>Alumno Apellido</th>
+            <th>Carnet</th>
+            <th>Grado</th>
+            <th>Padre</th>
+            <th>Madre</th>
+            <th>Edad</th>
+            <th>Nota</th>
+            
+         </tr>
+         <!-- $scope.employees -->
+         <tr ng-repeat="alumno in alumnos">
+            <td> {{ alumno.idAlumno }}</td>
+            <td> {{ alumno.nombreAlumno }}</td>
+            <td >{{ alumno.apellidoAlumno }}</td>
+            <td >{{ alumno.carnetAlumno }}</td>
+            <td >{{ alumno.gradoAlumno }}</td>
+            <td >{{ alumno.padreAlumno }}</td>
+            <td >{{ alumno.madreAlumno }}</td>
+            <td >{{ alumno.edadAlumno }}</td>
+            <td >{{ alumno.notaFinalAlumno }}</td>
+            <td>
+            <a ng-click="editAlumno(alumno)" class="btn btn-primary">Actualizar</a>
+            </td>
+            <td>
+            <a ng-click="deleteAlumno(alumno)" class="btn btn-primary">Eliminar</a>
+            </td>
+         </tr>
+      </table>
+    
+    </div>
+
+  </body>
+</html>
